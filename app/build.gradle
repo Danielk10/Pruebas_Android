@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
 	
 	compileSdkVersion 32
-    buildToolsVersion "30.0.3"
+    buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId "com.diamon.pruebas"
@@ -13,22 +13,25 @@ android {
         versionName "1.0.0"
 
     }
+    
+    
+packagingOptions {
+            exclude 'META-INF/robovm/ios/robovm.xml'
+        }
 
     buildTypes {
         release {
-            minifyEnabled false
+            
+                minifyEnabled false
+            		crunchPngs false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 		
-		compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
 		
 	
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    
 }
