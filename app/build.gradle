@@ -5,33 +5,34 @@ android {
 	compileSdkVersion 32
     buildToolsVersion "30.0.2"
 
+  packagingOptions {
+        exclude 'META-INF/robovm/ios/robovm.xml'
+    }
+
     defaultConfig {
         applicationId "com.diamon.pruebas"
         minSdkVersion 21
         targetSdkVersion 32
-        versionCode 33
+        versionCode 1
         versionName "1.0.0"
 
     }
-    
-    
-packagingOptions {
-            exclude 'META-INF/robovm/ios/robovm.xml'
-        }
 
-    buildTypes {
+      buildTypes {
         release {
-            
-                minifyEnabled false
-            		crunchPngs false
+            minifyEnabled false
+			crunchPngs false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-		
+    }
 		
 	
     }
-}
 
 dependencies {
     
+	implementation 'com.startapp:inapp-sdk:4.9.+'
+  
+
 }
+	
